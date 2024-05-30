@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEC4.0 - Soluciones a tu medida</title>
+    <link rel="shortcut icon" href="./assets/img/logo-minimizado.png" type="image/x-icon">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300;8..144,400;8..144,700&display=swap" rel="stylesheet">
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- HOJA DE ESTILOS -->
+    <style>
+        @charset "UTF-8";
+        /* PALETA DE COLORES */
+        /* TIPOGRAFIA */
+        /* PROYECTO */
+        * {
+        margin: 0;
+        padding: 0;
+        color: #fdfdfd;
+        }
+
+        html {
+        scroll-behavior: smooth;
+        }
+
+        body {
+        background-color: #070510;
+        overflow-x: hidden;
+        }
+
+        h1 {
+        font-family: "Roboto Flex";
+        font-size: 48px;
+        font-weight: 700;
+        }
+
+        p {
+        font-family: "Roboto Flex";
+        font-size: 32px;
+        font-weight: 400;
+        text-align: left;
+        line-height: 24px;
+        }
+
+        a {
+        text-decoration: none;
+        }
+
+        section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .contenedor {
+        width: 90%;
+        justify-content: center;
+        }
+
+        .seccion-inicio {
+        width: 100%;
+        height: 100vh;
+        }
+        .seccion-inicio .contenedor-inicio {
+        margin: 0px;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        position: relative;
+        }
+        .seccion-inicio .contenedor-inicio .imagen-fondo {
+        position: absolute;
+        align-self: self-end;
+        z-index: -1;
+        }
+        .seccion-inicio .contenedor-inicio .logo-mec {
+        width: 1190px;
+        }
+        .seccion-inicio .contenedor-inicio spline-viewer {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        z-index: 0;
+        top: 5%;
+        }
+        .seccion-inicio .contenedor-inicio p {
+        position: absolute;
+        top: 60%;
+        font-family: "Roboto Flex";
+        font-size: 32px;
+        font-weight: 400;
+        text-align: center;
+        width: 100%;
+        color: var(--color-grey-500, #FDFDFD);
+        /* normal/text/XL */
+        font-family: Roboto Flex;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 30px; /* 116.667% */
+        }
+        .seccion-inicio .contenedor-inicio .iconos-3d {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        }
+        .seccion-inicio .contenedor-inicio .iconos-3d img {
+        height: 200px;
+        padding: 0px 0px;
+        }
+        .seccion-inicio .contenedor-inicio .botones-inicio {
+        position: absolute;
+        top: 70%;
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        margin-top: 20px;
+        }
+        .seccion-inicio .contenedor-inicio .botones-inicio .boton {
+        border-radius: var(--radius-radius-lg, 40px);
+        border: 2px solid var(--primary-mixed, #03989E);
+        background: #252525;
+        padding: 15px;
+        width: 200px;
+        font-family: "Roboto Flex";
+        font-size: 24px;
+        font-weight: 400;
+        justify-content: center;
+        text-align: center;
+        }
+        .seccion-inicio .contenedor-inicio .botones-inicio .boton:hover {
+        background: linear-gradient(82deg, #03989E 5.92%, #9747FF 94.29%);
+        border: 1px solid var(--color-border-border, #FDFDFD);
+        }
+
+        .seccion-nosotros {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        }
+        .seccion-nosotros .contenedor {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border-radius: var(--radius-radius-xl, 25px);
+        background: rgba(37, 30, 67, 0.3);
+        }
+        .seccion-nosotros .contenedor .introduccion {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        width: 100%;
+        padding: 30px 70px;
+        }
+        .seccion-nosotros .contenedor .introduccion h1 {
+        font-family: "Roboto Flex";
+        font-size: 48px;
+        font-weight: 700;
+        text-align: center;
+        }
+        .seccion-nosotros .contenedor .introduccion .descripcion {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        }
+        .seccion-nosotros .contenedor .introduccion .descripcion p {
+        width: 100%;
+        text-align: left;
+        font-family: "Roboto Flex";
+        font-size: 24px;
+        font-weight: 400;
+        }
+
+        .seccion-servicios {
+        padding-top: 50px;
+        }
+        .seccion-servicios .contenedor {
+        margin: 0px 70px;
+        padding-top: 20px;
+        }
+        .seccion-servicios .contenedor .encabezado {
+        text-align: center;
+        width: 100%;
+        }
+        .seccion-servicios .contenedor .tab {
+        width: 100%;
+        }
+        .seccion-servicios .contenedor .tab ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        }
+        .seccion-servicios .contenedor .tab ul li {
+        padding: 0px 32px;
+        font-family: "Roboto Flex";
+        font-size: 24px;
+        font-weight: 400;
+        }
+        .seccion-servicios .contenedor .carrusel {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        }
+        .seccion-servicios .contenedor .carrusel .carrusel-industria {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        }
+        .seccion-servicios .contenedor .carrusel .carrusel-inventario {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        }
+        .seccion-servicios .contenedor .carrusel .carrusel-software {
+        width: 75%;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        }
+        .seccion-servicios .contenedor .carrusel .carta {
+        position: relative;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 580px;
+        border-radius: 15px;
+        z-index: -1;
+        }
+        .seccion-servicios .contenedor .carrusel .carta .bloque-descripcion {
+        position: absolute;
+        width: 90%;
+        height: 89px;
+        border-radius: var(--radius-radius-sm, 10px);
+        border: 0.2px solid var(--color-purple-501, #D4C8EE);
+        background: linear-gradient(0deg, rgba(46, 32, 80, 0.2) 0%, rgba(46, 32, 80, 0.2) 100%), rgba(196, 156, 214, 0.2);
+        backdrop-filter: blur(7.5px);
+        z-index: 1;
+        bottom: 32px;
+        left: 5%;
+        padding: 5px;
+        }
+        .seccion-servicios .contenedor .carrusel .carta .bloque-descripcion p {
+        display: flex;
+        flex-direction: column;
+        font-family: "Roboto Flex";
+        font-size: 24px;
+        font-weight: 400;
+        width: 100%;
+        text-align: center;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        }
+        .seccion-servicios .contenedor .carrusel #diseno-fabricacion {
+        background-image: url(../assets/img/servicios/Industria/Diseño-y-fabricación/Encabezado.jpg);
+        }
+        .seccion-servicios .contenedor .carrusel #ingenieria-integral {
+        background-image: url(../assets/img/servicios/Industria/Ingeniería-Integral/Encabezado.jpg);
+        }
+        .seccion-servicios .contenedor .carrusel #mantenimiento-industrial {
+        background-image: url(../assets/img/servicios/Industria/Mantenimiento-Industrial/Encabezado.jpg);
+        }
+        .seccion-servicios .contenedor .carrusel #suministro-directo {
+        background-image: url(../assets/img/servicios/Industria/Suministro-Directo/Encabezado.jpg);
+        }
+        .seccion-servicios .contenedor .carrusel #diseno-almacenes-asesoria-inventarios {
+        background-image: url(../assets/img/servicios/Inventario/Diseño-de-Almacenes-y-Asesoría-en-Inventarios/Encabezado.jpg);
+        }
+        .seccion-servicios .contenedor .carrusel #revaluo-activos {
+        background-image: url(../assets/img/servicios/Inventario/Revalúo-de-activos/Encabezado.jpg);
+        }
+        .seccion-servicios .contenedor .carrusel #aplicaciones-gestion-integral {
+        background-image: url(../assets/img/servicios/Software/Aplicaciones-de-gestión-integral-con-inteligencia-artificial/Encabezado.jpg);
+        }
+        .seccion-servicios .contenedor .carrusel #oficinas-virtuales {
+        background-image: url(../assets/img/servicios/Software/Oficinas-Virtuales/Encabezado.jpg);
+        background-position: 90%;
+        }
+        .seccion-servicios .contenedor .carrusel #sitios-web {
+        background-image: url(../assets/img/servicios/Software/Sitios-Web/Encabezado.jpg);
+        }
+
+        .seccion-principios .contenedor {
+        display: flex;
+        flex-direction: row;
+        margin-top: 85px;
+        padding-top: 70px;
+        padding-bottom: 50px;
+        gap: 20px;
+        align-items: center;
+        }
+        .seccion-principios .contenedor .seccion-principios__left {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        width: 33%;
+        }
+        .seccion-principios .contenedor .seccion-principios__left h1 {
+        margin-bottom: 23.43px;
+        }
+        .seccion-principios .contenedor .seccion-principios__left p {
+        margin-bottom: 32px;
+        font-family: "Roboto Flex";
+        font-size: 24px;
+        font-weight: 400;
+        }
+        .seccion-principios .contenedor .seccion-principios__left .boton {
+        background-color: #03989e;
+        padding: 15px;
+        font-family: "Roboto Flex";
+        font-size: 24px;
+        font-weight: 400;
+        justify-content: center;
+        text-align: center;
+        border-radius: var(--radius-radius-rounded, 50px);
+        background: var(--color-brand-1-color, #03989E);
+        }
+        .seccion-principios .contenedor .seccion-principios__left .boton:hover {
+        background: linear-gradient(82deg, #03989E 5.92%, #9747FF 94.29%);
+        border: 1px solid var(--color-border-border, #FDFDFD);
+        }
+        .seccion-principios .contenedor .seccion-principios__middle {
+        background-image: url(../assets/img/por-qué-mec.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 33%;
+        height: 344px;
+        }
+        .seccion-principios .contenedor .seccion-principios__right {
+        display: flex;
+        flex-direction: column;
+        gap: 10.91px;
+        width: 33%;
+        }
+        .seccion-principios .contenedor .seccion-principios__right .item {
+        display: flex;
+        height: 72px;
+        font-family: Roboto Flex;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px; /* 114.286% */
+        padding: var(--spacing-lg, 20px);
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: var(--radius-radius-sm, 10px);
+        border: 1px solid var(--color-border-border, #FDFDFD);
+        }
+        .seccion-principios .contenedor .seccion-principios__right #item-1 {
+        display: none;
+        }
+        .seccion-principios .contenedor .seccion-principios__right .accordion {
+        display: flex;
+        padding: 40px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        border-radius: var(--radius-radius-lg, 20px);
+        border: 0.5px solid var(--color-purple-501, #D4C8EE);
+        background: var(--primary-mixed, linear-gradient(82deg, #03989E 5.92%, #9747FF 94.29%));
+        display: none;
+        }
+        .seccion-principios .contenedor .seccion-principios__right .accordion h2 {
+        text-align: center;
+        font-family: Roboto Flex;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 36px; /* 112.5% */
+        }
+        .seccion-principios .contenedor .seccion-principios__right .accordion p {
+        color: var(--color-text-color-text-primary, #FDFDFD);
+        /* normal/text/M */
+        font-family: Roboto Flex;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 32px; /* 114.286% */
+        margin-bottom: 0px;
+        align-self: center;
+        justify-content: centerw;
+        }
+        .seccion-principios .contenedor .seccion-principios__right #accordion-1 {
+        display: block;
+        }
+
+        .seccion-clientes {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+        .seccion-clientes .contenedor {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+        .seccion-clientes .contenedor .introduccion {
+        text-align: center;
+        text-shadow: 0px 10px 20px rgba(151, 71, 255, 0.6);
+        /* bold/textXXL */
+        font-family: Roboto Flex;
+        font-size: 56px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 56px; /* 100% */
+        background: linear-gradient(180deg, #9747FF 20.54%, #03989E 89.29%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 102px 145px;
+        }
+        .seccion-clientes .contenedor .encabezado {
+        /* bold/text/XL */
+        font-family: Roboto Flex;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 56px; /* 116.667% */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+        .seccion-clientes .contenedor .carrusel-comentarios {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        }
+        .seccion-clientes .contenedor .carrusel-comentarios .container-comentario {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--background-glass, rgba(37, 30, 67, 0.3));
+        padding: 30px 20px;
+        }
+        .seccion-clientes .contenedor .carrusel-comentarios .container-comentario .comentario {
+        display: flex;
+        flex-direction: row;
+        height: max-content;
+        }
+        .seccion-clientes .contenedor .carrusel-comentarios .container-comentario .comentario img {
+        height: 44px;
+        width: 52px;
+        }
+        .seccion-clientes .contenedor .carrusel-comentarios .container-comentario p {
+        padding: 0px 75px;
+        font-family: Roboto Flex;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 36px; /* 112.5% */
+        }
+        .seccion-clientes .contenedor .carrusel-comentarios .container-comentario .container-persona {
+        margin-top: 0px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        gap: 12px;
+        }
+        .seccion-clientes .contenedor .carrusel-comentarios .container-comentario .container-persona .nombre-persona {
+        color: var(--color-text-color-text-primary, #FDFDFD);
+        /* bold/text/S */
+        font-family: Roboto Flex;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px; /* 100% */
+        text-align: right;
+        margin-bottom: 0px;
+        }
+        .seccion-clientes .contenedor .carrusel-comentarios .container-comentario .container-persona .cargo-persona {
+        color: var(--color-text-color-text-primary, #FDFDFD);
+        /* normal/text/S */
+        font-family: Roboto Flex;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 100% */
+        text-align: right;
+        }
+        .seccion-clientes .contenedor .carrusel-comentarios .container-comentario img {
+        width: 52px;
+        }
+
+        .carrusel-empresas {
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0px 70px;
+        flex-direction: row;
+        align-items: flex-start;
+        column-gap: 150px;
+        row-gap: 0px;
+        background: var(--background-glass, rgba(37, 30, 67, 0.3));
+        justify-content: center;
+        }
+        .carrusel-empresas img {
+        width: 300px;
+        }
+
+        .seccion-contactanos {
+        display: flex;
+        flex-direction: column;
+        padding-top: 106px;
+        justify-content: center;
+        padding-bottom: 102px;
+        }
+        .seccion-contactanos .encabezado {
+        text-align: center;
+        }
+        .seccion-contactanos .tab ul {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        justify-content: center;
+        }
+        .seccion-contactanos .tab ul li {
+        padding: 0px 32px;
+        font-family: "Roboto Flex";
+        font-size: 24px;
+        font-weight: 400;
+        }
+        .seccion-contactanos #tab-servicios {
+        background: linear-gradient(180deg, #03989E 7.58%, #6C57BF 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        }
+        .seccion-contactanos #tab-programas {
+        display: none;
+        }
+        .seccion-contactanos .bloque-form {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        padding: 0px 70px;
+        }
+        .seccion-contactanos .bloque-form .formularios label {
+        color: var(--color-text-color-text-primary, #FDFDFD);
+        width: 100%;
+        /* normal/text/S */
+        font-family: Roboto Flex;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 100% */
+        }
+        .seccion-contactanos .bloque-form .formularios input {
+        display: flex;
+        padding: var(--spacing-padding-padding-lg, 20px) var(--spacing-padding-padding-sm, 10px);
+        align-items: center;
+        align-self: stretch;
+        border-radius: var(--radius-radius-sm, 10px);
+        border: 1px solid var(--color-grey-500, #FDFDFD);
+        background-color: black;
+        width: 100%;
+        }
+        .seccion-contactanos .bloque-form .formularios input select {
+        display: flex;
+        padding: var(--spacing-padding-padding-lg, 20px) var(--spacing-padding-padding-md, 15px);
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: var(--radius-radius-sm, 10px);
+        border: 1px solid var(--color-grey-500, #FDFDFD);
+        background-color: black;
+        width: 100%;
+        }
+        .seccion-contactanos .bloque-form .formularios .formulario-servicios {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        }
+        .seccion-contactanos .bloque-form .formularios .formulario-servicios .contenedor-bloque {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        }
+        .seccion-contactanos .bloque-form .formularios .formulario-servicios .contenedor-bloque-2 {
+        display: flex;
+        flex-direction: row;
+        }
+        .seccion-contactanos .bloque-form .formularios .formulario-servicios #checkbox-permisos {
+        display: flex;
+        flex-direction: row;
+        gap: 4px;
+        }
+        .seccion-contactanos .bloque-form .formularios .formulario-servicios #checkbox-permisos input {
+        width: 16px;
+        height: 16px;
+        border-radius: 1px;
+        background: var(--color-grey-500, #FDFDFD);
+        }
+        .seccion-contactanos .bloque-form .formularios .formulario-servicios #checkbox-permisos label {
+        font-family: Roboto Flex;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px; /* 88.889% */
+        }
+        .seccion-contactanos .bloque-form .formularios .boton {
+        background-color: #03989e;
+        padding: 15px;
+        font-family: "Roboto Flex";
+        font-size: 24px;
+        font-weight: 400;
+        justify-content: center;
+        text-align: center;
+        border-radius: var(--radius-radius-rounded, 50px);
+        background: var(--color-brand-1-color, #03989E);
+        }
+        .seccion-contactanos .bloque-form .formularios .boton:hover {
+        background: linear-gradient(82deg, #03989E 5.92%, #9747FF 94.29%);
+        border: 1px solid var(--color-border-border, #FDFDFD);
+        }
+        .seccion-contactanos .bloque-form .mapa {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        }
+        .seccion-contactanos .bloque-form .mapa .informacion {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        }
+        .seccion-contactanos .bloque-form .mapa .informacion .contenedor-bloque {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        }
+        .seccion-contactanos .bloque-form .mapa .informacion .contenedor-bloque img {
+        width: 32px;
+        height: 32px;
+        }
+        .seccion-contactanos .bloque-form .mapa .informacion .contenedor-bloque p {
+        color: #FFF;
+        /* normal/text/S */
+        font-family: Roboto Flex;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 100% */
+        }
+
+        footer {
+        background-color: var(--background-glass, rgba(37, 30, 67, 0.3));
+        padding: 16px 70px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        }
+        footer .logo-derechos-reservados {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        }
+        footer .logo-derechos-reservados .logo-footer {
+        width: 373.475px;
+        }
+        footer .logo-derechos-reservados p {
+        color: #FFF;
+        font-family: Roboto Flex;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 16px; /* 88.889% */
+        }
+        footer .redes-sociales {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        }
+        footer .redes-sociales img {
+        display: flex;
+        width: 32px;
+        height: 32px;
+        padding: 4px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        border: 1px solid var(--color-grey-500, #FDFDFD);
+        }
+        footer .redes-sociales img:hover {
+        border-radius: var(--radius-radius-rounded, 50px);
+        border: 1px solid var(--Primary-mix, #36D5E0);
+        }
+
+        nav {
+        position: relative;
+        display: flex;
+        }
+        nav .nav-bar {
+        position: absolute;
+        width: 100%;
+        z-index: 1000;
+        border-radius: 10px;
+        background: linear-gradient(0deg, rgba(7, 5, 12, 0.2) 0%, rgba(46, 32, 80, 0.2) 100%), rgba(196, 156, 214, 0.2);
+        backdrop-filter: blur(7.5px);
+        position: fixed;
+        }
+        nav .nav-bar ul {
+        padding-top: 1rem;
+        margin-right: 70px;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        justify-content: end;
+        }
+        nav .nav-bar ul a {
+        text-decoration: none;
+        }
+        nav .nav-bar ul a:hover {
+        background: linear-gradient(180deg, #63d7db 7.58%, #6C57BF 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        }
+        nav .nav-bar ul li {
+        font-family: "Roboto Flex";
+        font-size: 20px;
+        font-weight: 400;
+        }
+
+        .seccion-encabezado {
+        display: flex;
+        flex-direction: column;
+        height: 60vh;
+        background-image: url(../assets/img/servicios/Industria/Diseño-y-fabricación/Encabezado.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+        .seccion-encabezado .titulos {
+        display: flex;
+        flex-direction: column;
+        width: 66%;
+        border-radius: var(--spacing-padding-padding-sm, 10px);
+        background: var(--background-glass, rgba(37, 30, 67, 0.3));
+        backdrop-filter: blur(5px);
+        padding: 20px;
+        align-items: flex-start;
+        justify-content: left;
+        }
+
+        .introduccion-servicios {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        width: 100%;
+        padding: 30px 70px;
+        height: 40vh;
+        }
+        .introduccion-servicios p {
+        width: 100%;
+        text-align: left;
+        font-family: "Roboto Flex";
+        font-size: 24px;
+        font-weight: 400;
+        border-radius: var(--radius-radius-xl, 25px);
+        background: rgba(37, 30, 67, 0.3);
+        padding: 30px;
+        }
+
+        .subservicios {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        }
+        .subservicios .contenedor {
+        display: flex;
+        flex-direction: column;
+        width: 75%;
+        }
+        .subservicios .contenedor .grilla {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        }
+        .subservicios .contenedor .grilla .contenedor-subservicio--izquierda {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        width: 100%;
+        justify-content: center;
+        }
+        .subservicios .contenedor .grilla .contenedor-subservicio--izquierda .imagen-subservicio {
+        width: 50%;
+        height: 252px;
+        overflow-y: hidden;
+        border-radius: var(--radius-radius-lg, 20px);
+        border: 2px solid var(--color-hover-item, #03989E);
+        }
+        .subservicios .contenedor .grilla .contenedor-subservicio--izquierda .imagen-subservicio img {
+        width: 100%;
+        position: center;
+        }
+        .subservicios .contenedor .grilla .contenedor-subservicio--izquierda .descripcion-subservicio {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 32px;
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+        }
+        .subservicios .contenedor .grilla .contenedor-subservicio--izquierda .descripcion-subservicio h1 {
+        color: #FFF;
+        text-align: center;
+        /* bold/text/L */
+        font-family: Roboto Flex;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 36px; /* 112.5% */
+        }
+        .subservicios .contenedor .grilla .contenedor-subservicio--izquierda .descripcion-subservicio p {
+        color: #FFF;
+        /* normal/text/S */
+        font-family: Roboto Flex;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 100% */
+        }
+        .subservicios .contenedor .grilla .contenedor-subservicio--derecha {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 20px;
+        width: 100%;
+        justify-content: center;
+        }
+        .subservicios .contenedor .grilla .contenedor-subservicio--derecha .imagen-subservicio {
+        width: 50%;
+        height: 252px;
+        overflow-y: hidden;
+        border-radius: var(--radius-radius-lg, 20px);
+        border: 2px solid var(--color-hover-item, #03989E);
+        }
+        .subservicios .contenedor .grilla .contenedor-subservicio--derecha .imagen-subservicio img {
+        width: 100%;
+        position: center;
+        }
+        .subservicios .contenedor .grilla .contenedor-subservicio--derecha .descripcion-subservicio {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 32px;
+        width: 50%;
+        align-items: center;
+        justify-content: center;
+        }
+        .subservicios .contenedor .grilla .contenedor-subservicio--derecha .descripcion-subservicio h1 {
+        color: #FFF;
+        text-align: center;
+        /* bold/text/L */
+        font-family: Roboto Flex;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 36px; /* 112.5% */
+        }
+        .subservicios .contenedor .grilla .contenedor-subservicio--derecha .descripcion-subservicio p {
+        color: #FFF;
+        /* normal/text/S */
+        font-family: Roboto Flex;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 100% */
+        }
+
+        @media (max-width: 600px) {
+        nav .nav-bar {
+            height: 50px;
+        }
+        nav .nav-bar li {
+            display: none;
+        }
+        main .contenedor {
+            width: 90%;
+        }
+        main .seccion-inicio .contenedor-inicio spline-viewer {
+            top: -5%;
+        }
+        main .seccion-inicio .contenedor-inicio p {
+            font-size: 25px;
+            padding-left: 5px;
+            padding-right: 5px;
+            top: 50%;
+        }
+        main .seccion-inicio .contenedor-inicio .botones-inicio {
+            flex-direction: column;
+            gap: 5px;
+            width: 90%;
+            top: 60%;
+        }
+        main .seccion-inicio .contenedor-inicio .botones-inicio .boton {
+            width: 100%;
+        }
+        main .seccion-nosotros .contenedor {
+            margin-bottom: 0px;
+        }
+        main .seccion-nosotros .contenedor .introduccion {
+            padding: 30px 0px;
+            margin-bottom: 10px;
+        }
+        main .seccion-nosotros .contenedor .introduccion h1 {
+            font-size: 30px;
+        }
+        main .seccion-servicios .contenedor {
+            margin-bottom: 10px;
+        }
+        main .seccion-servicios .contenedor .encabezado h1 {
+            font-size: 30px;
+        }
+        main .seccion-servicios .contenedor .carrusel .carrusel-industria {
+            flex-direction: column;
+        }
+        main .seccion-servicios .contenedor .carrusel .carrusel-inventario {
+            flex-direction: column;
+            width: 100%;
+        }
+        main .seccion-servicios .contenedor .carrusel .carrusel-software {
+            flex-direction: column;
+            width: 100%;
+        }
+        main .seccion-servicios .contenedor .carrusel .carta {
+            position: static;
+            display: flex;
+            flex-direction: column;
+            height: 200px;
+            justify-content: center;
+            align-items: center;
+        }
+        main .seccion-servicios .contenedor .carrusel .carta .bloque-descripcion {
+            position: static;
+            height: 90px;
+        }
+        main .seccion-servicios .contenedor .carrusel .carta .bloque-descripcion p {
+            font-family: Roboto Flex;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 36px; /* 112.5% */
+            padding: 3px;
+        }
+        main .seccion-principios {
+            padding-bottom: 0px;
+            margin-top: 0px;
+        }
+        main .seccion-principios .contenedor {
+            flex-direction: column;
+        }
+        main .seccion-principios .contenedor .seccion-principios__left {
+            width: 100%;
+        }
+        main .seccion-principios .contenedor .seccion-principios__middle {
+            width: 100%;
+        }
+        main .seccion-principios .contenedor .seccion-principios__right {
+            width: 100%;
+        }
+        main .seccion-clientes .contenedor .introduccion {
+            font-size: 35px;
+            padding: 0px;
+            margin-bottom: 50px;
+        }
+        main .seccion-clientes .contenedor .encabezado h1 {
+            font-size: 30px;
+        }
+        main .seccion-clientes .contenedor .carrusel-comentarios .container-comentario {
+            width: 100%;
+        }
+        main .seccion-clientes .contenedor .carrusel-comentarios .container-comentario .comentario img {
+            height: 20px;
+            width: 20px;
+        }
+        main .seccion-clientes .contenedor .carrusel-comentarios .container-comentario .comentario p {
+            font-size: 25px;
+            padding: 0px 15px;
+        }
+        main .seccion-clientes .contenedor .carrusel-comentarios .container-comentario .container-persona .nombre-persona {
+            font-size: 20px;
+        }
+        main .seccion-clientes .contenedor .carrusel-comentarios .container-comentario .container-persona .cargo-persona {
+            font-size: 20px;
+        }
+        main .carrusel-empresas {
+            margin-top: 0px;
+            padding: 0px;
+            column-gap: 20px;
+        }
+        main .carrusel-empresas img {
+            width: 35%;
+        }
+        main .seccion-contactanos .encabezado h1 {
+            font-size: 35px;
+        }
+        main .seccion-contactanos .tab li {
+            font-size: 20px;
+        }
+        main .seccion-contactanos .bloque-form {
+            flex-direction: column;
+            padding: 0px;
+            width: 90%;
+        }
+        footer .logo-derechos-reservados .logo-footer {
+            width: 150px;
+        }
+        footer .logo-derechos-reservados p {
+            font-size: 10px;
+        }
+        }
+
+        /*# sourceMappingURL=style.css.map */
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <ul>
+                <a href="#inicio"><li>Inicio</li></a>
+                <a href="#servicios"><li>Servicios</li></a>
+                <a href="#nosotros"><li>Nosotros</li></a>
+                <a href="#experiencia"><li>Clientes</li></a>
+                <a href="#contactanos"><li>Contáctanos</li></a>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section id="inicio" class="seccion-inicio">
+            <div class="contenedor-inicio">
+                <img class="imagen-fondo" src="./assets/img/background-image.png" alt="">
+                <!-- <img class="logo-mec" src="./assets/img/logo-mec4.png" alt=""> -->
+                
+                <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.490/build/spline-viewer.js"></script>
+                <spline-viewer url="https://prod.spline.design/agqUeRhC1q5zYeJ2/scene.splinecode"></spline-viewer>
+
+                <p>En MEC 4.0 realizamos soluciones a tu medida <br> aquí algunos de nuestros principales servicios:</p>
+                <!--
+                <div class="iconos-3d">
+                    <img src="./assets/img/logos-servicios/FACTORY.png" alt="">
+                    <img src="./assets/img/logos-servicios/INVENTORY.png" alt="">
+                    <img src="./assets/img/logos-servicios/LAPTOP.png" alt="">
+                </div> -->
+                <div class="botones-inicio">
+                    <a href="#carrusel-industria">
+                        <div class="boton">
+                            Industria
+                        </div>
+                    </a>
+                    <a href="#carrusel-inventario">
+                        <div class="boton">
+                            Inventarios
+                        </div>
+                    </a>
+                    <a href="#carrusel-software">
+                        <div class="boton">
+                            Software
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="seccion-nosotros">
+            <!-- NOSOTROS -->
+            <div class="contenedor">
+                <div class="introduccion">
+                    <h1>En Mec 4.0 creamos valor a través de la tecnología</h1>    <!-- Aumentar barra-->
+                    <div class="descripcion">
+                        <p>Ayudamos a nuestros clientes a prosperar en la era digital, a través de una cartera completa de soluciones y servicios de mantenimiento regular, correctivo o preventivo que permiten la transformación y mejoran la eficiencia empresarial e industrial.</p>
+                        <p>Desde nuestro inicio el 2019, MEC 4.0 ha sido impulsado por la pasión, innovación y tecnología, de esta manera hemos servido con éxito a empresas industriales del medio.<br>Permítenos ser tu solución integral para todas tus necesidades de mantenimiento industrial.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="servicios" class="seccion-servicios">
+            <div class="contenedor">
+                <!-- SERVICIOS -->
+                <div class="encabezado">
+                    <h1>Nuestros Servicios</h1>    <!-- Aumentar barra-->
+                </div>
+                <!--<div class="tab">
+                    <ul>
+                        <li>Industria</li>
+                        <li>Inventario</li>
+                        <li>Software</li>
+                    </ul>
+                </div> -->
+                <div class="carrusel">
+                    <h2>Industria</h2>
+                    <!-- INDUSTRIA -->
+                    
+                    <div id="carrusel-industria" class="carrusel-industria">
+                        <div id="diseno-fabricacion" class="carta">
+                            <div  class="bloque-descripcion">
+                                <p>Diseño y Fabricación</p>
+                            </div>
+                        </div>
+                        <div id="ingenieria-integral"  class="carta">
+                            <div class="bloque-descripcion">
+                                <p>Ingeniería Integral</p>
+                            </div>
+                        </div>
+                        <div id="mantenimiento-industrial" class="carta">
+                            <div  class="bloque-descripcion">
+                                <p>Mantenimiento Industrial</p>
+                            </div>
+                        </div>
+                        <div  id="suministro-directo" class="carta">
+                            <div class="bloque-descripcion">
+                                <p>Suministro Directo</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- INVENTARIO -->
+                    <h2>Inventarios</h2>
+                    <div id="carrusel-inventario" class="carrusel-inventario">
+                        
+                        <div id="diseno-almacenes-asesoria-inventarios" class="carta">
+                            <div   class="bloque-descripcion">
+                                <p>Diseño de Almacenes y Asesoría en Inventarios</p>
+                            </div>
+                        </div>
+                        <div id="revaluo-activos" class="carta">
+                            <div  class="bloque-descripcion">
+                                <p>Revalúo de activos</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SOFTWARE -->
+                    <h2>Software</h2>
+                    <div id="carrusel-software" class="carrusel-software">
+                        <div id="aplicaciones-gestion-integral" class="carta">
+                            <div  class="bloque-descripcion">
+                                <p>Aplicaciones de gestión integral con inteligencia artificial</p>
+                            </div>
+                        </div>
+                        <div id="oficinas-virtuales" class="carta">
+                            <div  class="bloque-descripcion">
+                                <p>Oficinas Virtuales</p>
+                            </div>
+                        </div>
+                        <div id="sitios-web" class="carta">
+                            <div class="bloque-descripcion">
+                                <p>Sitios Web</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        
+        <section id="nosotros" class="seccion-principios">
+            <div class="contenedor">
+                <div class="seccion-principios__left">
+                    <h1>¿Por qué MEC 4.0?</h1>
+                    <p>Proporcionamos soluciones a tu medida diseñadas para satisfacer tus necesidades específicas, optimizando los costos superfluos y re dirigiendo recursos hacia el fomento de la innovación.</p>
+                    <div class="boton">
+                        Conócenos
+                    </div>
+                </div>
+                <div class="seccion-principios__middle">
+                    
+                </div>
+                <div class="seccion-principios__right">
+                    <div id="item-1" class="item">Cultura de trabajo responsable</div>
+                    <div id="accordion-1" class="accordion">
+                        <h2>Cultura de trabajo responsable</h2>
+                        <p>Fomentamos una cultura de trabajo responsable y efectiva ante los retos venideros trabajamos brindando lo mejor de nosotros en cualquier situación.</p>
+                    </div>
+                    <div id="item-2" class="item">Comprometidos con tus objetivos</div>
+                    <div id="accordion-2" class="accordion">
+                        <h2>Comprometidos con tus objetivos</h2>
+                        <p>Con el fin de garantizar la satisfacción del cliente, manteniendo la fidelidad a los principios de tu empresa.</p>
+                    </div>
+                    <div id="item-3" class="item">Equipo proactivo y talentoso</div>
+                    <div id="accordion-3" class="accordion">
+                        <h2>Equipo proactivo y talentoso</h2>
+                        <p>Damos valor agregado a tus ideas aplicando el concepto de mejora continua en cada uno de los servicios que ofrecemos</p>
+                    </div>
+                    <div  id="item-4" class="item">Comunicación transpartente y eficáz</div>
+                    <div id="accordion-4" class="accordion">
+                        <h2>Comunicación transpartente y eficáz</h2>
+                        <p>Mantenemos una retroalimentación constante con nuestros clientes atendiendo cada uno de sus requerimientos con la calidad que nos caracteriza.</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </section>
+        <section id="experiencia" class="seccion-clientes">
+            <div class="contenedor">
+                <h1 class="introduccion">Creamos valor atraves de experiencia, proactividad y mejora continua.</h1>
+                <div class="encabezado">
+                    <h1>Clientes que confían en nuestros servicios</h1>    <!-- Aumentar barra-->
+                </div>
+                <div class="carrusel-comentarios">
+                    <div class="container-comentario">
+                        <div class="comentario">
+                            <img src="./assets/iconos/comilla-izquierda.png" alt="">
+                            <p>Son un equipo que entiende la criticidad y la importancia de los trabajos requeridos, más de un año trabajando Planta Huari - Mec 4.0 y supieron acomodarse a las complejidades y necesidades de planta.</p>
+                            <img src="./assets/iconos/comilla-derecha.png" alt="">
+                        </div>
+                        <div class="container-persona">
+                            <img src="" alt="" class="foto-persona">
+                            <p class="nombre-persona">Alejandro Argandoña Lizon</p>
+                            <p class="cargo-persona">Packaging Planner - CBN</p>
+                        </div>
+                    </div>
+                    <div class="container-comentario">
+                        <div class="comentario">
+                            <img src="./assets/iconos/comilla-izquierda.png" alt="">
+                            <p>Excelente servicio, rapido y confiable. Ademas brindan asesoria para mejorar y optimizar los sistemas.</p>
+                            <img src="./assets/iconos/comilla-derecha.png" alt="">
+                        </div>
+                        <div class="container-persona">
+                            <img src="" alt="" class="foto-persona">
+                            <p class="nombre-persona">Luis Carlos Iturricha Cáceres</p>
+                            <p class="cargo-persona">Gerente Regional - PRECONSUR S.R.L.</p>
+                        </div>
+                    </div>
+                    <div class="container-comentario">
+                        <div class="comentario">
+                            <img src="./assets/iconos/comilla-izquierda.png" alt="">
+                            <p>Recomiendo a la empresa, trabajo con ellos y siempre recibí una excelente atención y servicio.</p>
+                            <img src="./assets/iconos/comilla-derecha.png" alt="">
+                        </div>
+                        <div class="container-persona">
+                            <img src="" alt="" class="foto-persona">
+                            <p class="nombre-persona">Ricardo Álvarez Barriga</p>
+                            <p class="cargo-persona">Soporte de Calidad en Elaboración - CBN</p>
+                        </div>
+                    </div>
+                    <div class="container-comentario">
+                        <div class="comentario">
+                            <img src="./assets/iconos/comilla-izquierda.png" alt="">
+                            <p>Buen servicio, empresa con mucha seriedad y compromiso.</p>
+                            <img src="./assets/iconos/comilla-derecha.png" alt="">
+                        </div>
+                        <div class="container-persona">
+                            <img src="" alt="" class="foto-persona">
+                            <p class="nombre-persona">Luis Ferrufino Iriarte</p>
+                            <p class="cargo-persona">Ingeniero Electromecánico - EECI</p>
+                        </div>
+                    </div>
+                    <div class="container-comentario">
+                        <div class="comentario">
+                            <img src="./assets/iconos/comilla-izquierda.png" alt="">
+                            <p>Sin duda la agilidad en soluciónes van de la mano con el compromiso que tiene está empresa.</p>
+                            <img src="./assets/iconos/comilla-derecha.png" alt="">
+                        </div>
+                        <div class="container-persona">
+                            <img src="" alt="" class="foto-persona">
+                            <p class="nombre-persona">Alvaro Almanza Villarroel</p>
+                            <p class="cargo-persona">Supervisor de Mantenimiento - CBN</p>
+                        </div>
+                    </div>
+                    <div class="container-comentario">
+                        <div class="comentario">
+                            <img src="./assets/iconos/comilla-izquierda.png" alt="">
+                            <p>Excelente servicio, puntualidad, diversidad.Profesionales destacados en servicios, acabados excelentes, te asesoran de forma muy profesional. Un equipo de trabajo diverso y con alta experiencia en muchos ámbitos.</p>
+                            <img src="./assets/iconos/comilla-derecha.png" alt="">
+                        </div>
+                        <div class="container-persona">
+                            <img src="" alt="" class="foto-persona">
+                            <p class="nombre-persona">Mariana Lino Sánchez</p>
+                            <p class="cargo-persona">Supervisor de Mantenimiento - CBN</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carrusel-empresas">
+                    <img src="./assets/img/empresas/AMDECO.png" alt="">
+                    <img src="./assets/img/empresas/CBN.png" alt="">
+                    <img src="./assets/img/empresas/ECOLAB.png" alt="">
+                    <img src="./assets/img/empresas/EMAP.png" alt="">
+                    <img src="./assets/img/empresas/EMSA.png" alt="">
+                    <img src="./assets/img/empresas/GRUPO SAN JOAQUIN HIDRO.png" alt="">
+                    <img src="./assets/img/empresas/INDUSTRIAS ALIMENTICIAS DEL VALLE.png" alt="">
+                    <img src="./assets/img/empresas/MMAYA.png" alt="">
+                    <img src="./assets/img/empresas/YPFB.png" alt="">
+                </div>
+            </div>
+            
+        </section>
+        <section id="contactanos" class="seccion-contactanos">
+            <div class="encabezado">
+                <h1>Conéctate con nosotros</h1>    <!-- Aumentar barra-->
+            </div>
+            <div class="tab">
+                <ul>
+                    <li id="tab-servicios">Servicios de MEC4.0</li>
+                    <li>Únete a nuestro equipo</li>
+                    <li id="tab-programas">Aplica a nuestros programas</li> <!-- Ocultar -->
+                </ul>
+            </div>
+            <div class="bloque-form">
+                <div class="formularios">
+                    <form class="formulario-servicios" action="/submit_form" method="post">
+                        <div class="contenedor-bloque">
+                            <label for="fnombre">Nombre completo:</label>
+                            <input type="text" id="fname" name="nombre" placeholder="Nombre completo">
+                        </div>
+                        <div class="contenedor-bloque">
+                            <label for="lpuesto">Puesto de trabajo / cargo:</label>
+                            <input type="text" name="puesto" placeholder="Puesto de trabajo / cargo">
+                        </div>
+                        <div class="contenedor-bloque">
+                            <label for="lempresa">Nombre de la empresa:</label>
+                            <input type="text" name="empresa" placeholder="Nombre de la empresa">
+                        </div>
+                        <div class="contenedor-bloque">
+                            <label for="lemail">Email:</label>
+                            <input type="text"  name="email" placeholder="Email">
+                        </div>
+                        <div class="contenedor-bloque">
+                            <label for="ltelefono">Teléfono:</label>
+                            <div class="contenedor-bloque-2">
+                                <!--
+                                <select id="codigo" name="codigo">
+                                    <option value="bolivia">+591</option>
+                                    <option value="argentina">+54</option>
+                                    <option value="chile">+56</option>
+                                </select>
+                                -->
+                                <input type="text" name="telefono" placeholder="Teléfono de la empresa">
+                            </div>
+                        </div>
+                        <!-- 
+                        <div class="contenedor-bloque">
+                            <label for="lname">Servicios:</label>
+                            <select id="servicios" name="servicios">
+                                <option value="bolivia">Diseño y fabricación</option>
+                                <option value="argentina">Ingeniería Integral</option>
+                                <option value="chile">Mantenimiento Industrial</option>
+                                <option value="chile">Suministro Directo</option>
+                                <option value="chile">Diseño de almacenes y asesoría en inventarios</option>
+                                <option value="chile">Revalúo de activos</option>
+                                <option value="chile">Aplicaciones de Gestión Integral</option>
+                                <option value="chile">Oficinas Virtuales</option>
+                                <option value="chile">Sitios Web</option>
+                            </select>
+                        </div>
+                        -->
+                        <div class="contenedor-bloque">
+                            <label for="lname">Cómo podemos ayudarte:</label>
+                            <input type="text" name="mensaje" placeholder="Cómo podemos ayudarte">
+                        </div>
+                        <div class="contenedor-bloque" id="checkbox-permisos">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="">Permito a MEC 4.0 almacenar, procesar y usar la información personal 
+                                registrada en el formulario para recibir noticias y actualizaciones de la empresa 
+                                y estoy de acuerdo con la política de privacidad</label>
+                        </div>
+                        <div class="boton">
+                            Enviar
+                        </div>
+                    </form>
+                    <!-- Aumentar formularios -->
+                </div>
+                <div class="mapa">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d591.0851310116673!2d-66.1649419303695!3d-17.375887648392748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sbo!4v1698679310036!5m2!1ses-419!2sbo" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="informacion">
+                        <div class="contenedor-bloque">
+                            <img src="./assets/iconos/location.png" alt="">
+                            <p>Nuestra oficina se encuentra en Cochabamba: Av. Teofilo Vargas #361, Edificio Ayala. Piso 5 oficina A</p>
+                        </div>
+                        <div class="contenedor-bloque">
+                            <img src="./assets/iconos/user.png" alt="">
+                            <p>Gerente General: Ing. Gonzalo Vilar Quiroga</p>
+                        </div>
+                        <div class="contenedor-bloque">
+                            <img src="./assets/iconos/phone.png" alt="">
+                            <p>Número celular: +591-759-76565</p>
+                        </div>
+                        <div class="contenedor-bloque">
+                            <img src="./assets/iconos/mail.png" alt="">
+                            <p>Email de la empresa: gerencia@mec4.com.bo</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+            
+    </main>
+    <footer>
+        <div class="logo-derechos-reservados">
+            <img class="logo-footer" src="./assets/img/logo-mec4.png" alt="">
+            <p>© 2023 MEC 4.0. All rights reserved</p>
+        </div>
+        <div class="redes-sociales">
+            <a href="https://www.facebook.com/mec4ingenieria" target="_blank"><img src="./assets/iconos/facebook.png" alt=""></a>
+            <a href="https://www.instagram.com/mec_4.0/" target="_blank"><img src="./assets/iconos/instagram.png" alt=""></a>
+            <a href="https://www.linkedin.com/company/mec4-0/" target="_blank"><img src="./assets/iconos/LinkedIn.png" alt=""></a>
+        </div>
+    </footer>
+</body>
+</html>
